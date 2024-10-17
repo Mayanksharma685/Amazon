@@ -1,0 +1,802 @@
+/* Global Settings */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Helper Classes */
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Sprite */
+.sprite-sheet {
+    background-image: url("https://m.media-amazon.com/images/G/31/gno/sprites/nav-sprite-global-1x-reorg-privacy._CB600086755_.png");
+
+}
+
+/* Container - Configurable */
+.container {
+    width: 1450px;
+    margin: 0 auto;
+}
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+
+
+.slider {
+    position: relative;
+    width: 150%;
+    height: 400px; /* Similar to Amazon's banner height */
+    overflow: hidden;
+  }
+  
+  .slides {
+    display: flex;
+    width: 300%; /* 100% * number of slides */
+    height: 100%;
+    transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  
+  .slide {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+  }
+  
+  .slide img {
+    width: 1516px;
+    height: max-content;
+    object-fit: fill;
+    display: flex;
+    
+  }
+  
+  /* Automatic sliding keyframes */
+  @keyframes slideAnimation {
+    /* 0%, 100% { transform: translateX(0); } */
+    0%, 20% { transform: translateX(0); }
+    20%, 50% { transform: translateX(-100%); }
+    50%, 75% { transform: translateX(-200%); }
+    75%, 100% { transform: translateX(-300%); }
+    100%, 0% { transform: translateX(0); }
+  }
+  
+  .slides {
+    animation: slideAnimation 12s infinite; /* 12 seconds for the entire loop */
+  }
+  
+  /* Navigation Dots */
+  .navigation {
+    /* position: absolute; */
+    bottom: 170px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-btn {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  #homeicon:checked ~ .slides {
+    transform: translateX(0);
+    animation: none;
+  }
+  
+  #h2:checked ~ .slides {
+    transform: translateX(-100%);
+    animation: none;
+  }
+  
+  #h3:checked ~ .slides {
+    transform: translateX(-200%);
+    animation: none;
+  }
+  #h4:checked ~ .slides {
+    transform: translateX(-300%);
+    animation: none;
+  }
+  #h5:checked ~ .slides {
+    transform: translateX(-400%);
+    animation: none;
+  }
+  #homeicon:checked ~ .navigation .nav-btn:nth-child(1),
+  #h2:checked ~ .navigation .nav-btn:nth-child(2),
+  #h3:checked ~ .navigation .nav-btn:nth-child(3)
+  #h4:checked ~ .navigation .nav-btn:nth-child(4)
+  #h5:checked ~ .navigation .nav-btn:nth-child(5) {
+    background-color: #333;
+  }
+  /* Container for offer grid */
+/* Offer grid container */
+.offer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Space between the cards */
+    gap: 20px; /* Spacing between cards */
+    margin-top: 20px;
+}
+
+/* Each offer card */
+.offer-card {
+    flex: 0 0 24%; /* Flex-grow and take 30% of the container width */
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-width: 250px; /* Minimum width of a card */
+    text-align: center;
+}
+
+/* For larger cards (like appliances section) that need extra space */
+.large-card {
+    flex: 10 0 24%;
+    text-align: left;
+    padding: 20px;
+
+}
+
+/* Sub-card grid inside large card */
+.sub-card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Each sub-card inside large-card */
+.sub-card {
+    flex: 1 1 22%; /* Each sub-card takes 22% of available width */
+    min-width: 150px; /* Minimum width for sub-cards */
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Image styling for offer cards */
+.offer-card img, 
+.sub-card img {
+    max-width: 100%;
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: contain; /* Ensure the image is contained within the div */
+    margin-bottom: 10px;
+    flex-shrink: 0; /* Ensure image size doesn't shrink */
+}
+
+/* Links in the offer cards */
+.offer-card a,
+.sub-card a {
+    display: inline-block;
+    color: blue;
+    text-decoration: none;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+/* Media Queries to adjust responsiveness */
+@media (max-width: 1024px) {
+    .offer-card {
+        flex: 1 1 45%; /* On medium screens, make the cards 45% wide */
+    }
+
+    .sub-card {
+        flex: 1 1 45%; /* Sub-cards take up 45% width on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .offer-card {
+        flex: 1 1 100%; /* Full-width cards on smaller screens */
+    }
+
+    .sub-card {
+        flex: 1 1 100%; /* Sub-cards also full width on smaller screens */
+    }
+}
+
+
+/* Header */
+#header {
+    background-color: #131921;
+    padding: 10px 0px 0px;
+}
+
+#header .logo {
+    width: 8%;
+}
+#header .location {
+    width: 12%;
+}
+#header .search {
+    width: 60%;
+    margin-left: 10px;
+}
+
+#header a {
+    color: #fff;
+    display: block;
+    padding: 10px;
+}
+
+#header .logo-sprite {
+    display: inline-block;
+    vertical-align: top;
+    width: 97px;
+    height: 30px;
+    background-position: -10px -51px;
+}
+
+#header a:hover {
+    border: 1px solid #fff;
+    border-radius: 3px;
+}
+
+#header .location-sprite {
+    display: inline-block;
+    background-position: -71px -378px;
+    width: 15px;
+    height: 18px;
+}
+
+#header .search select {
+    height: 40px;
+    width: 54px;
+}
+#header .search input[type="text"] {
+    width: 90%;
+    height: 40px;
+    border: none;
+}
+#header .search button {
+    background-color: #F3A847;
+    border: none;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    vertical-align: middle;
+    margin-left: -39px;
+    margin-top: -1px;
+}
+
+#nav-tools {
+    width: 19%;
+}
+#nav-tools ul li {
+    display: inline-block;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #232F3E;
+    padding: 10px 20px;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    
+}
+
+.navbar-menu li {
+    position: relative;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.menu-icon {
+    font-size: 18px;
+}
+
+.navbar-menu a:hover {
+    background-color: #3A4553;
+    border-radius: 5px;
+}
+
+.dropdown {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #232F3E;
+    list-style: none;
+    padding: 10px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    margin-bottom: 10px;
+}
+
+.dropdown-menu li:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-menu a {
+    padding: 5px 15px;
+}
+
+.festival-banner img {
+    height: 50px;
+}
+
+.deals-section {
+    max-width: 1530px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.deals-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.deal-card {
+    background-color: #f9f9f9;
+    width: 18%;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.deal-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.discount-badge {
+    background-color: #ff3e3e;
+    color: white;
+    padding: 5px 10px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.deal-info {
+    padding: 10px;
+}
+
+.deal-info h3 {
+    color: #e60000;
+    margin: 10px 0;
+}
+
+.deal-info p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+    text-decoration: line-through;
+}
+
+.deal-info p:last-child {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+
+
+/* 499 Deals Section */
+.deals-499-section {
+    background-color: #fdf5e6; /* Light beige background */
+    padding: 40px 20px;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(227, 225, 225, 0.1); /* Slight shadow for elevation */
+    text-align: center;
+}
+
+.deals-499-section h2 {
+    color: #cb401d; /* Distinct orange color */
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.deals-499-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.deal-card-499 {
+    background-color: #ffffff;
+    width: 18%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.deal-card-499:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.deal-card-499 img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.deal-info-499 h3 {
+    color: #333;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.deal-info-499 p {
+    font-size: 16px;
+    color: #999;
+    margin: 5px 0;
+    text-decoration: line-through;
+}
+
+.deal-info-499 .final-price {
+    text-decoration: none;
+    color: #ff6f00; /* Highlight final price in orange */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.special-offer-badge {
+    background-color: #ff3e3e;
+    color: white;
+    padding: 5px 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .deal-card-499 {
+        width: 45%; /* Adjust width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .deal-card-499 {
+        width: 100%; /* Full width on mobile */
+    }
+}
+
+
+
+
+/* Banner */
+
+
+.banner-container {
+    width: 90%;
+    max-width: 1200px;
+    background-color: #ff6f00;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.text-content h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.text-content p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.features-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.features-list li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+.brand img {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.brand p {
+    font-size: 14px;
+}
+
+.image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-content img {
+    max-width: 1150px;
+    border-radius: 0px;
+    padding: 30px;
+}
+
+/* 50 percent offers */
+.main-wrapper {
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.discount-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:beige;
+    padding: 15px;
+}
+
+.discount-title {
+    margin: 0;
+    font-size: 24px;
+}
+
+.view-offers {
+    text-decoration: none;
+    color: blue;
+    font-size: 16px;
+}
+
+.product-showcase {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.product-item {
+    flex-basis: 100px;
+    margin: 10px;
+}
+
+.product-item img {
+    max-width: max-content;
+    height: auto;
+    border: 0px solid #ddd;
+    padding: 30px;
+    border-radius: 8px;
+}
+/* Main */
+
+/* Footer */
+
+.footer-container {
+    background-color: #232F3E;
+    color: #DDD;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Footer Columns Section */
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #FFF;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: #DDD;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Lower Section */
+.footer-lower {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #3a4553;
+    padding-top: 20px;
+    visibility: visible;
+}
+
+/* Footer Logo and Language Selector */
+.footer-logo-language {
+    display: flex;
+    align-items: center;
+}
+
+.amazon-logo {
+    width: 43px;
+    margin-right: 45px;
+}
+
+.language-selectors {
+    display: flex;
+    gap: 20px;
+}
+
+.language-select,
+.country-select {
+    display: flex;
+    align-items: center;
+    background-color: #37475A;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+}
+
+.language-select select,
+.country-select select {
+    background: none;
+    border: none;
+    color: white;
+    margin-left: 10px;
+}
+
+/* Country Flag Styling */
+.country-flag {
+    width: 20px;
+    height: 15px;
+}
+
+/* Footer Bottom Links */
+.footer-bottom-links ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-bottom-links ul li a {
+    color: #DDD;
+    text-decoration: none;
+}
+
+.footer-bottom-links ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Legal Section */
+.footer-legal {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #AAA;
+}
+
+.footer-legal p {
+    margin: 5px 0;
+}
+
+/* Responsive for Small Devices */
+@media (max-width: 768px) {
+    .footer-columns {
+        flex-direction: column;
+    }
+
+    .footer-lower {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-bottom-links ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

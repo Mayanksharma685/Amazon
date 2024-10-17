@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon</title>
+    <link rel="icon" type="image/jpg" href="./images/amazon.jpg">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="main.css">
+
+
+    <!-- Font Awesome JS -->
+    <script src="https://kit.fontawesome.com/9d397540b6.js" crossorigin="anonymous"></script>
+    <!-- Main JS -->
+    <script src="assets/javascripts/main.js"></script>
+</head>
+<body>
+    
+    <!-- Container for complete web page -->
+    <div id="container">
+
+        <!-- Header -->
+        <header id="header">
+            <div class="row">
+                <div class="logo left">
+                    <a href="#">
+                        <span class="logo-sprite sprite-sheet"></span>
+                        <span>.in</span>
+                    </a>
+                </div>
+                <div class="location left">
+                    <a href="#">
+                        <div class="row">
+                            <div class="left">
+                                <span class="sprite-sheet location-sprite"></span>        
+                            </div> 
+                            <div class="right">
+                                <p>Delivering to Delhi 110001</p>
+                                <p>Update Location</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="search left">
+                    <form action="#">
+                        <select>
+                            <option>All</option>
+                            <option value="">All Categories</option>
+                            <option value="">Alexa Skills</option>
+                            <option value="">Alexa Skills</option>
+                            <option value="">Alexa Skills</option>
+                            <option value="">Alexa Skills</option>
+                            <option value="">Alexa Skills</option>
+                            <option value="">Alexa Skills</option>
+                            <option value="">Alexa Skills</option>
+                            <option value="">Alexa Skills</option>
+                            <option value="">Alexa Skills</option>
+                            <option value="">Alexa Skills</option>
+                            <option value="">Alexa Skills</option>
+                        </select>
+                        <input type="text" placeholder="Search Amazon.in">
+                        <button>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </div>
+                <div id="nav-tools" class="right">
+                    <ul>
+                        <li>
+                            <a href="#">En</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Hello, Sign in</span> <br>
+                                <span>Accounts & Lists</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">Returns & Orders</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span>Cart</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <nav class="navbar">
+            <ul class="navbar-menu">
+                <li><a href="#"><i class="menu-icon">&#9776;</i> All</a></li>
+                <li><a href="#">Fresh</a></li>
+                <li><a href="#">Amazon miniTV</a></li>
+                <li><a href="#">Sell</a></li>
+                <li><a href="#">Best Sellers</a></li>
+                <li><a href="#">Today's Deals</a></li>
+                <li><a href="#">Mobiles</a></li>
+                <li class="dropdown">
+                    <a href="#">Prime <i class="dropdown-arrow">&#9662;</i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Prime Video</a></li>
+                        <li><a href="#">Prime Music</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Customer Service</a></li>
+                <li><a href="#">Electronics</a></li>
+                <li><a href="#">Home & Kitchen</a></li>
+                <li><a href="#">Fashion</a></li>
+            </ul>
+            <div class="festival-banner">
+                <a href="#"><img src="images/festival-deal.jpg" alt="Festival Deals"></a>
+            </div>
+        </nav>
+        
+    </div>
+    
+   
+
+  <div class="slider">
+    <!-- Container for slides -->
+    <div class="slides">
+      <div class="slide">
+        <img src="./images/homeicon.jpg" alt="Festival Banner" width="100%" height="100%">
+      </div>
+      <div class="slide">
+        <img src="./images/h2.jpg" alt="20% Cashback Offer" >
+      </div>
+      <div class="slide">
+        <img src="./images/h3.jpg" alt="SBI 10% Discount" >
+      </div>
+      <div class="slide">
+        <img src="./images/h4.jpg" alt="SBI 10% Discount">
+      </div>
+      <div class="slide">
+        <img src="./images/h5.jpg" alt="SBI 10% Discount" >
+      </div>
+    </div>
+  </div>
+
+  <div class="navigation">
+    <label for="homeicon" class="nav-btn"></label>
+    <label for="h2" class="nav-btn"></label>
+    <label for="h3" class="nav-btn"></label>
+    <label for="h4" class="nav-btn"></label>
+    <label for="h5" class="nav-btn"></label>
+  </div>
+
+  <!-- Hidden radio inputs for manual navigation -->
+  <input type="radio" name="slider" id="homeicon" checked>
+  <input type="radio" name="slider" id="h2">
+  <input type="radio" name="slider" id="h3">
+  <input type="radio" name="slider" id="h4">
+  <input type="radio" name="slider" id="h5">
+
+  <div class="offer-grid">
+    <!-- Card 1 -->
+    <div class="offer-card">
+      <h2>Up to 80% off | Electronics & accessories</h2>
+      <img src="./images/ipad.jpg" alt="Electronics Offers">
+      <a href="#">See all offers</a>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="offer-card">
+      <h2>Starting ₹6,999 | Upgrade to 4K TVs</h2>
+      <img src="./images/tv.jpg" alt="4K TV Offers">
+      <a href="#">See all offers</a>
+    </div>
+
+    <div class="offer-card large-card">
+      <h2>Up to 75% off | Never before offers on appliances</h2>
+      <div class="sub-card-grid">
+        <div class="sub-card">
+          <img src="./images/washingmachine.jpg" alt="Washing Machine">
+          <p>Front loads | Up to 60% off</p>
+        </div>
+        <div class="sub-card">
+          <img src="./images/fridge.jpg" alt="High capacity fridge">
+          <p>High capacity fridges | Up to 60% off</p>
+        </div>
+        <div class="sub-card">
+          <img src="./images/ac.jpg" alt="Energy Efficient AC">
+          <p>Energy efficient ACs | Up to 60% off</p>
+        </div>
+        <div class="sub-card">
+          <img src="./images/chimney.jpg" alt="Autoclean chimney">
+          <p>Autoclean chimneys | Up to 75% off</p>
+        </div>
+      </div>
+      <a href="#">See all offers</a>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="offer-card">
+      <h2>Minimum 50% off | Home, kitchen & more</h2>
+      <div class="sub-card-grid">
+        <div class="sub-card">
+          <img src="./images/kitchenappli.jpg" alt="Kitchen appliance">
+          <p>Kitchen appliance</p>
+        </div>
+        <div class="sub-card">
+          <img src="./images/homedecor.jpg" alt="Home decor">
+          <p>Home decor</p>
+        </div>
+        <div class="sub-card">
+          <img src="./images/furniture.jpg" alt="Furniture">
+          <p>Furniture</p>
+        </div>
+        <div class="sub-card">
+          <img src="./images/homeimprovement.jpg" alt="Home improvement">
+          <p>Home improvement</p>
+        </div>
+      </div>
+      <a href="#">See all deals</a>
+    </div>
+  </div>
+
+<!-- deals section -->
+
+  <div class="deals-section">
+    <h2>Blockbuster deals with exchange</h2>
+    <div class="deals-container">
+        <!-- Card 1 -->
+        <div class="deal-card">
+            <div class="discount-badge">49% off</div>
+            <img src="./images/mobile.jpg" alt="Samsung Galaxy S23 Ultra 5G">
+            <div class="deal-info">
+                <h3>₹75,999</h3>
+                <p>M.R.P: ₹1,49,999.00</p>
+                <p>Samsung Galaxy S23 Ultra 5G AI SmartPhone</p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="deal-card">
+            <div class="discount-badge">27% off</div>
+            <img src="./images/iphone13.jpg" alt="iPhone 13">
+            <div class="deal-info">
+                <h3>₹43,999</h3>
+                <p>M.R.P: ₹59,900.00</p>
+                <p>Apple iPhone 13 (128GB) - Starlight</p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="deal-card">
+            <div class="discount-badge">35% off</div>
+            <img src="./images/macbook.jpg" alt="MacBook Air">
+            <div class="deal-info">
+                <h3>₹59,990</h3>
+                <p>M.R.P: ₹92,900.00</p>
+                <p>Apple MacBook Air Laptop: Apple M1 Chip</p>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="deal-card">
+            <div class="discount-badge">15% off</div>
+            <img src="./images/realme.jpg" alt="Realme Narzo 70 Turbo">
+            <div class="deal-info">
+                <h3>₹16,998</h3>
+                <p>M.R.P: ₹19,999.00</p>
+                <p>Realme Narzo 70 Turbo 5G</p>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="deal-card">
+            <div class="discount-badge">23% off</div>
+            <img src="./images/iqoo.jpg" alt="iQOO Z9S 5G">
+            <div class="deal-info">
+                <h3>₹19,998</h3>
+                <p>M.R.P: ₹25,999.00</p>
+                <p>iQOO Z9S 5G (Onyx Green, 8GB RAM)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- deals under 499 -->
+<section class="deals-499-section">
+    <h2>Deals Under ₹499</h2>
+    <div class="deals-499-container">
+        <div class="deal-card-499">
+            <img src="./images/stars.jpg" alt="Deal 1">
+            <div class="deal-info-499">
+                <h3>Stars</h3>
+                <p>₹699</p>
+                <p class="final-price">₹499</p>
+            </div>
+            <span class="special-offer-badge">Best Seller</span>
+        </div>
+        <div class="deal-card-499">
+            <img src="./images/bedsheet.jpg" alt="Deal 2">
+            <div class="deal-info-499">
+                <h3>Bedsheet</h3>
+                <p>₹649</p>
+                <p class="final-price">₹499</p>
+            </div>
+            <span class="special-offer-badge">Limited Stock</span>
+        </div>
+        <div class="deal-card-499">
+            <img src="./images/studytable.jpg" alt="Deal 3">
+            <div class="deal-info-499">
+                <h3>Study Table</h3>
+                <p>₹799</p>
+                <p class="final-price">₹499</p>
+            </div>
+            <span class="special-offer-badge">Hot Deal</span>
+        </div>
+        <div class="deal-card-499">
+            <img src="./images/lights.jpg" alt="Deal 3">
+            <div class="deal-info-499">
+                <h3>Lights</h3>
+                <p>₹799</p>
+                <p class="final-price">₹499</p>
+            </div>
+            <span class="special-offer-badge">Hot Deal</span>
+        </div>
+        <div class="deal-card-499">
+            <img src="./images/jeans.jpg" alt="Deal 3">
+            <div class="deal-info-499">
+                <h3>Jeans</h3>
+                <p>₹799</p>
+                <p class="final-price">₹499</p>
+            </div>
+            <span class="special-offer-badge">Hot Deal</span>
+        </div>
+        <!-- Add more deal cards as needed -->
+    </div>
+</section>
+
+
+<!-- ticket booking  -->
+<div>
+    <div class="image-content">
+        <img src="./images/plane.jpg" alt="Airplane Image">
+    </div>
+
+</div>
+
+
+<!-- 50 percent offers -->
+<div class="main-wrapper">
+    <div class="discount-banner">
+        <h2 class="discount-title">Minimum 50% off | Home, kitchen & outdoors</h2>
+        <a href="#" class="view-offers">See all offers</a>
+    </div>
+    <div class="product-showcase">
+        <div class="product-item">
+            <img src="./images/product1.jpg" alt="Water Purifier">
+        </div>
+        <div class="product-item">
+            <img src="./images/product2.jpg" alt="Scooter">
+        </div>
+        <div class="product-item">
+            <img src="./images/product3.jpg" alt="Badminton Shuttle">
+        </div>
+        <div class="product-item">
+            <img src="./images/product4.jpg" alt="Water Dispenser">
+        </div>
+        <div class="product-item">
+            <img src="./images/product5.jpg" alt="Dashcam">
+        </div>
+        <div class="product-item">
+            <img src="./images/product6.jpg" alt="Air Fryer">
+        </div>
+        <div class="product-item">
+            <img src="./images/product7.jpg" alt="Vacuum Cleaner">
+        </div>
+    </div>
+</div>
+
+
+<!-- footer  -->
+  <footer class="footer-container">
+    <div class="footer-columns">
+        <div class="footer-column">
+            <h3>Get to Know Us</h3>
+            <ul>
+                <li><a href="#">About Amazon</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Press Releases</a></li>
+                <li><a href="#">Amazon Science</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Connect with Us</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Make Money with Us</h3>
+            <ul>
+                <li><a href="#">Sell on Amazon</a></li>
+                <li><a href="#">Amazon Accelerator</a></li>
+                <li><a href="#">Amazon Global Selling</a></li>
+                <li><a href="#">Fulfilment by Amazon</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Let Us Help You</h3>
+            <ul>
+                <li><a href="#">Your Account</a></li>
+                <li><a href="#">Returns Centre</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">100% Purchase Protection</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer class="footer-container">
+      <div class="footer-columns">
+          <div class="footer-column">
+              <h3>Get to Know Us</h3>
+              <ul>
+                  <li><a href="#">About Amazon</a></li>
+                  <li><a href="#">Careers</a></li>
+                  <li><a href="#">Press Releases</a></li>
+                  <li><a href="#">Amazon Science</a></li>
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h3>Connect with Us</h3>
+              <ul>
+                  <li><a href="#">Facebook</a></li>
+                  <li><a href="#">Twitter</a></li>
+                  <li><a href="#">Instagram</a></li>
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h3>Make Money with Us</h3>
+              <ul>
+                  <li><a href="#">Sell on Amazon</a></li>
+                  <li><a href="#">Amazon Accelerator</a></li>
+                  <li><a href="#">Amazon Global Selling</a></li>
+                  <li><a href="#">Fulfilment by Amazon</a></li>
+                  <li><a href="#">Advertise Your Products</a></li>
+                  <li><a href="#">Amazon Pay on Merchants</a></li>
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h3>Let Us Help You</h3>
+              <ul>
+                  <li><a href="#">Your Account</a></li>
+                  <li><a href="#">Returns Centre</a></li>
+                  <li><a href="#">Recalls and Product Safety Alerts</a></li>
+                  <li><a href="#">100% Purchase Protection</a></li>
+                  <li><a href="#">Amazon App Download</a></li>
+                  <li><a href="#">Help</a></li>
+              </ul>
+          </div>
+      </div>
+
+      <div class="footer-lower">
+          <div class="footer-logo-language">
+              <img src="./images/ama.jpg" alt="Amazon Logo" class="amazon-logo" height="40%" width="20%">
+              <div class="language-selectors">
+                  <div class="language-select">
+                      <span>🌐</span>
+                      <select>
+                          <option>English</option>
+                          <option>Hindi</option>
+                          <option>French</option>
+                          <option>japnease</option>
+                      </select>
+                  </div>
+                  <div class="country-select">
+                      <img src="./images/india.jpg" alt="India Flag" class="country-flag">
+
+                      <select>
+                          <option>India </option>
+                          <option>America </option>
+                          <option>Japan</option>
+                          <option>France</option>
+                      </select>
+                  </div>
+              </div>
+          </div>
+
+          <div class="footer-bottom-links">
+              <ul>
+                  <li><a href="#">AbeBooks</a></li>
+                  <li><a href="#">Amazon Web Services</a></li>
+                  <li><a href="#">Shopbop</a></li>
+                  <li><a href="#">Amazon Business</a></li>
+                  <li><a href="#">Prime Now</a></li>
+                  <li><a href="#">Amazon Prime Music</a></li>
+                  <li><a href="#">Audible</a></li>
+                  <li><a href="#">IMDb</a></li>
+              </ul>
+          </div>
+      </div>
+
+      <div class="footer-legal">
+          <p>Conditions of Use & Sale  |  Privacy Notice  |  Interest-Based Ads</p>
+          <p>© 1996-2024, Amazon.com, Inc. or its affiliates</p>
+      </div>
+  </footer>
+
+
+</body>
+</html>
